@@ -14,7 +14,7 @@ export class AddTaskComponent implements OnInit {
   ngOnInit() {
   }
   public selectedParent: string;
-  value: number = 5;
+  defaultSliderValue: number = 5;
   options: Options = {
     floor: 0,
     ceil: 30
