@@ -1,0 +1,75 @@
+<div class="row">
+  <div class="col-lg-12">&nbsp;</div>
+</div>
+
+<div class="row">
+  <label class="col-sm-2 col-form-label">Task : </label>
+  <div class="col-lg-3">
+    <input class="form-control" name="task" placeholder="Task" [(ngModel)]="taskName">
+  </div>
+  <label class="col-sm-2 col-form-label">Parent Task : </label>
+  <div class="col-lg-3">
+    <input class="form-control" name="Parent Task" placeholder="Parent Task" [(ngModel)]="parentTask">
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-12">&nbsp;</div>
+</div>
+<div class="row">
+  <label class="col-sm-2 col-form-label">Priority From : </label>
+  <div class="col-lg-3">
+    <input class="form-control" name="PriorityFrom" placeholder="Priority From" [(ngModel)]="taskName" type="number">
+  </div>
+  <label class="col-sm-2 col-form-label">Priority To : </label>
+  <div class="col-lg-3">
+    <input class="form-control" name="PriorityTo" placeholder="Priority To " [(ngModel)]="parentTask" type="number">
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-12">&nbsp;</div>
+</div>
+
+<div class="row">
+  <label class="col-sm-2 col-form-label">Start Date: </label>
+  <div class="col-lg-3">
+    <input class="form-control" type="date" name="StartDate" placeholder="Start Date" [(ngModel)]="taskName">
+  </div>
+  <label class="col-sm-2 col-form-label">End Date : </label>
+  <div class="col-lg-3">
+    <input class="form-control" type="date" name="End date" placeholder="End Date" [(ngModel)]="parentTask">
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-12">&nbsp;</div>
+</div>
+
+<div class="row">
+  <div class="col-lg-10 text-center">
+    <div class="form-group">
+      <button id="btnFilter" type="submit" class="btn btn-default" (click)='SearchTask()'>Search</button>
+      <button id="btnReset" type="submit" class="btn btn-default" (click)='Reset()'>Reset</button>
+    </div>
+  </div>
+</div>
+
+<div class="col-lg-12">
+  <div class="table-responsive">
+    <table class="table table-bordered table-hover">
+      <thead>
+        <tr>
+          <th>Task</th>
+          <th>Parent</th>
+          <th>Priority</th>
+          <th>Start</th>
+          <th>End</th>
+          <th>#</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
