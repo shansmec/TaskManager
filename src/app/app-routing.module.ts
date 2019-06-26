@@ -9,8 +9,8 @@ const routes: Routes = [
   { path: 'AddTask', component: AddTaskComponent },
   { path: 'ViewTask', component: ViewTaskComponent },
   { path: 'UpdateTask', component: UpdateTaskComponent },
-  { path: 'DashBoard', component: DashBoardComponent }
-
+  { path: 'DashBoard', component: DashBoardComponent },
+  { path: '**', component: ViewTaskComponent },
 ];
 
 @NgModule({
