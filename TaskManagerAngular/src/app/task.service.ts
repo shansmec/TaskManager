@@ -9,7 +9,7 @@ import { ParentTask } from './parent-task';
 })
 export class TaskService {
 
-  BaseUrl = 'http://localhost:62971/taskmanager/';
+  BaseUrl = 'http://localhost:62971/taskmanager';
   constructor(private http: HttpClient) { }
 
   public getAllTasks(): Observable<Task[]> {
