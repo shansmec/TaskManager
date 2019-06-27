@@ -13,3 +13,12 @@ export class ViewTaskComponent implements OnInit {
   }
 
 }
+
+export class TaskSearch {
+  TaskName: string = "";
+  ParentName: string = "";
+  PriorityFrom: number = 0;
+  PriorityTo: number = 30;
+  StartDate: string = new Date().toISOString().split('T')[0];
+  EndDate: string = new Date().toISOString().split('T')[0];
+}

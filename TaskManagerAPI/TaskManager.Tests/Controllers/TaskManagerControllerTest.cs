@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TaskManagerApi.Controllers;
@@ -65,6 +66,10 @@ namespace TaskManagerApi.Tests.Controllers
             Task task = tasks.Where(t => t.Name == "TestUpdate1").FirstOrDefault();
             string newName = task.Name + "Renamed";
             task.Name = newName;
+            task.StartDate  = DateTime.ParseExact(task.StartDate, "dd/MM/yyyy", CultureInfo.InvariantCulture)
+                        .ToString("MM/dd/yyyy", CultureInfo.InvariantCulture).ToString();
+            task.EndDate = DateTime.ParseExact(task.EndDate, "dd/MM/yyyy", CultureInfo.InvariantCulture)
+                        .ToString("MM/dd/yyyy", CultureInfo.InvariantCulture).ToString();
             taskManagerController.UpdateTask(task);
             task = taskManagerController.GetTask(task.TaskId);
             Assert.IsTrue(task.Name == newName);
