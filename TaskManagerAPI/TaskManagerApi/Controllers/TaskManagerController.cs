@@ -34,6 +34,7 @@ namespace TaskManagerApi.Controllers
         }
 
         [HttpGet]
+        [HttpOptions]
         [ActionName("GetAllParentTasks")]
         // GET: api/TaskManager/5
         public IEnumerable<ParentTask> GetAllParentTasks()

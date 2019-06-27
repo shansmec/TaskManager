@@ -14,7 +14,12 @@ namespace TaskManagerApi
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
-            GlobalConfiguration.Configure(WebApiConfig.Register);
+            RouteConfig.RegisterRoutes(RouteTable.Routes);
+            WebApiConfig.Register(GlobalConfiguration.Configuration);
+            GlobalConfiguration.Configuration.EnsureInitialized();
+
+
+            //GlobalConfiguration.Configure(WebApiConfig.Register);
         }
 
         protected void Application_BeginRequest()
@@ -25,6 +30,16 @@ namespace TaskManagerApi
             {
                 HttpContext.Current.Response.AddHeader("Access-Control-Allow-Origin", origin);
                 HttpContext.Current.Response.AddHeader("Access-Control-Allow-Methods", "GET,POST");
+            }
+
+            if (HttpContext.Current.Request.HttpMethod == "OPTIONS")
+            {
+                //These headers are handling the "pre-flight" OPTIONS call sent by the browser
+                HttpContext.Current.Response.AddHeader("Access-Control-Allow-Origin", "http://localhost:4200/");
+                HttpContext.Current.Response.AddHeader("Access-Control-Allow-Methods", "GET, POST");
+                HttpContext.Current.Response.AddHeader("Access-Control-Allow-Headers", "Accepts, Content-Type, Origin, X-My-Header");
+                HttpContext.Current.Response.AddHeader("Access-Control-Max-Age", "60");
+                HttpContext.Current.Response.End();
             }
         }
     }
