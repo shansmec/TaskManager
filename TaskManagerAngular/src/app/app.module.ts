@@ -8,7 +8,6 @@ import { NgSelectModule } from '@ng-select/ng-select';
 import { AddTaskComponent } from './add-task/add-task.component';
 import { ViewTaskComponent } from './view-task/view-task.component';
 import { UpdateTaskComponent } from './update-task/update-task.component';
-import { DashBoardComponent } from './dash-board/dash-board.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms'; 
 import { ReactiveFormsModule } from '@angular/forms';
@@ -20,7 +19,6 @@ import { ReactiveFormsModule } from '@angular/forms';
     AddTaskComponent,
     ViewTaskComponent,
     UpdateTaskComponent,
-    DashBoardComponent
   ],
   imports: [
     BrowserModule,
