@@ -7,4 +7,8 @@ export class Task {
     Priority: number = 0;
     ParentTaskName: string = "";
   }
-  
+export class  DropdownList
+{
+    value: number;
+    label: string
+}
