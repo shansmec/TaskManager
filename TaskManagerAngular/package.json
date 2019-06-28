@@ -7,7 +7,8 @@
     "build": "ng build",
     "test": "karma start",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "prodBuild": "ng build --prod"
   },
   "private": true,
   "dependencies": {
