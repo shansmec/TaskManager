@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class ViewTaskComponent implements OnInit {
   public _taskService!: TaskService;
   public availableTasks!: Task[];
+  public parentTask;
   public taskSearch: TaskSearch = new TaskSearch();
   constructor(private taskService: TaskService, private router: Router) {
     this._taskService = taskService;
@@ -52,6 +53,7 @@ export class ViewTaskComponent implements OnInit {
   updateTask(task: Task) {
     this.router.navigate(['/AddTask'], { queryParams: { TaskId: task.TaskId } });
   }
+  Reset(){}
 
 }
 
