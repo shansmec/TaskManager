@@ -3,13 +3,16 @@ import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Task } from './task';
 import { Observable } from 'rxjs';
 import { ParentTask } from './parent-task';
+import { environment } from '../environments/environment';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class TaskService {
 
-  BaseUrl = 'http://localhost:62971/api/taskmanager';
+  BaseUrl = environment.baseUrl;
+  
   constructor(private http: HttpClient) { }
 
   public getAllTasks(): Observable<Task[]> {
