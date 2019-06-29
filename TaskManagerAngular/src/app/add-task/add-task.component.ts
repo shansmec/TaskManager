@@ -19,6 +19,7 @@ export class AddTaskComponent implements OnInit {
   public availableParentTasks!: ParentTask[];
   public selectedParent: string;
   defaultSliderValue: number = 5;
+  public addTaskButtonName :string ="Add Task";
   options: Options = {
     floor: 0,
     ceil: 30
@@ -36,11 +37,13 @@ export class AddTaskComponent implements OnInit {
   getTaskDetails() {
     let id = window.top.location.href.split("?TaskId=")[1];
     if (id === "0" || id === undefined) {
+      this.addTaskButtonName="Add Task";
       return;
     }
     this._taskService.getTask(parseInt(id)).subscribe(
       result => {
         this.setTaskDetails(result);
+        this.addTaskButtonName="Update Task";
       }
     );
   }
