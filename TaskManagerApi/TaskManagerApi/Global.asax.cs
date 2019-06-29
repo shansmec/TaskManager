@@ -22,7 +22,7 @@ namespace TaskManagerApi
 
         protected void Application_BeginRequest()
         {
-            string[] allowedOrigin = new string[] { "http://localhost:4200/" };
+            string[] allowedOrigin = new string[] { "http://localhost:4200/" , "http://localhost:8081/" };
             var origin = HttpContext.Current.Request.Headers["Origin"];
             if (origin != null && allowedOrigin.Contains(origin))
             {
